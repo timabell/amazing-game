@@ -50,4 +50,10 @@
     <Compile Include="GameEngineTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\amazing-game\amazing-game.csproj">
+      <Project>{F484E1D5-4696-409A-BF6F-D0E93682A44F}</Project>
+      <Name>amazing-game</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
