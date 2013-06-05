@@ -16,6 +16,12 @@ namespace amazinggame
 		public Game()
 		{
 			Player = new Player();
+
+			// Start the player facing North:
+			// (Although this is the default value for the enum
+			// it is set explicitly anyway to avoid confusion
+			// due to use of magic)
+			Player.Facing = Direction.North;
 		}
 	}
 }

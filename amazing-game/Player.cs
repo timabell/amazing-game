@@ -24,6 +24,6 @@ namespace amazinggame
 		/// </summary>
 		/// A move command will cause the player to move in the direction
 		/// indicated here.
-		public Direction Facing { get; private set; }
+		public Direction Facing { get; internal set; }
 	}
 }
