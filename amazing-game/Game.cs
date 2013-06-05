@@ -4,12 +4,13 @@ using System;
 
 namespace amazinggame
 {
-	/***
-	 * This is the engine for the game,
-	 * encapsulating all the rules of play
-	 * and the interactions the player can use.
-	 */
+	/// <summary>
+	/// This is the engine for the game,
+	/// encapsulating all the rules of play
+	/// and the interactions the player can use.
+	/// </summary>
 	public class Game
 	{
+		public Player Player { get; set; }
 	}
 }
