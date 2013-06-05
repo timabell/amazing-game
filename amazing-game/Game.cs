@@ -39,7 +39,39 @@ namespace amazinggame
 
 		public void ExecutePlayerCommand(PlayerCommand command)
 		{
-			throw new NotImplementedException("hold your horses!");
+			switch (command)
+			{
+				case PlayerCommand.Move:
+					MovePlayer();
+					return;
+				default: // here be dragons
+					// Where did that come from? Bad programmer, you didn't finish your refactoring, as a prize you get this exception:
+					throw new NotSupportedException(
+						String.Format("Unexpected enum value encountered for PlayerCommand: {0}", command));
+			}
+		}
+
+		public void MovePlayer ()
+		{
+			switch (Player.Facing)
+			{
+				case Direction.North:
+					Player.y++;
+					break;
+				case Direction.East:
+					Player.y++;
+					break;
+				case Direction.South:
+					Player.y++;
+					break;
+				case Direction.West:
+					Player.y++;
+					break;
+				default:
+					// Throw invalid operation to reflect broken internal state.
+					throw new InvalidOperationException(
+						String.Format("Unexpected enum value encountered for Player.Facing: {0}", Player.Facing));
+			}
 		}
 	}
 }
