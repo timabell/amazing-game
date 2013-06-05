@@ -75,14 +75,15 @@ namespace amazinggame
 		/// </summary>
 		private void MovePlayer ()
 		{
+			// Move the player unless already at a board edge (that's what the spec asks for)
 			switch (Player.Facing)
 			{
 				case Direction.North:
-					if (Player.y < MaxY) { // no effect if already at edge (that's what the spec asks for)
+					if (Player.y < MaxY) {
 						Player.y++;
 					}
 					break;
-				case Direction.East: // TODO: limit checks on east/south/west & matching tests
+				case Direction.East:
 					if (Player.x < MaxX) {
 						Player.x++;
 					}
