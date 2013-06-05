@@ -7,9 +7,11 @@ namespace amazinggametests
 	public class GameEngineTests
 	{
 		[Test()]
-		public void TestCase ()
+		public void IntialState_PlayerAtOrigin()
 		{
-			Assert.Fail("fixme");
+			var game = new Game();
+			Assert.AreEqual(0, game.Player.x);
+			Assert.AreEqual(0, game.Player.y);
 		}
 	}
 }
