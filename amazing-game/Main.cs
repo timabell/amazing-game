@@ -6,7 +6,9 @@ namespace amazinggame
 	{
 		public static void Main (string[] args)
 		{
-			Console.WriteLine ("Hello World!");
+			Console.Clear();
+			var game = new Game();
+			Console.Out.WriteLine(game);
 		}
 	}
 }
