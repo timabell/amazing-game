@@ -9,6 +9,7 @@ namespace amazinggametests
 		[Test()]
 		public void TestCase ()
 		{
+			Assert.Fail("fixme");
 		}
 	}
 }
