@@ -41,7 +41,7 @@ namespace amazinggametests
 		}
 
 		[Test()]
-		public void TestMovesToBoardEdge()
+		public void TestMovesToNorthBoardEdge()
 		{
 			var game = new Game();
 			for (int count = 1; count < 5; count++){
@@ -52,7 +52,7 @@ namespace amazinggametests
 		}
 
 		[Test()]
-		public void TestDoesntMovePastBoardEdge()
+		public void TestDoesntMovePastNorthBoardEdge()
 		{
 			var game = new Game();
 			for (int count = 1; count < 6; count++){
@@ -60,6 +60,52 @@ namespace amazinggametests
 			}
 			Assert.AreEqual(0, game.Player.x, "Unexpected X axis movement");
 			Assert.AreEqual(4, game.Player.y, "Player didn't stop at the North edge of the board");
+		}
+
+
+		[Test()]
+		public void TestMovesToEastBoardEdge()
+		{
+			var game = new Game();
+			game.ExecutePlayerCommand(PlayerCommand.Right);
+			for (int count = 1; count < 5; count++){
+				game.ExecutePlayerCommand(PlayerCommand.Move);
+			}
+			Assert.AreEqual(4, game.Player.x, "Player failed to move to East edge of the board");
+			Assert.AreEqual(0, game.Player.y, "Unexpected Y axis movement");
+		}
+
+		[Test()]
+		public void TestDoesntMovePastEastBoardEdge()
+		{
+			var game = new Game();
+			game.ExecutePlayerCommand(PlayerCommand.Right);
+			for (int count = 1; count < 6; count++){
+				game.ExecutePlayerCommand(PlayerCommand.Move);
+			}
+			Assert.AreEqual(4, game.Player.x, "Player didn't stop at the East edge of the board");
+			Assert.AreEqual(0, game.Player.y, "Unexpected Y axis movement");
+		}
+
+		[Test()]
+		public void TestDoesntMovePastSouthBoardEdge()
+		{
+			var game = new Game();
+			game.ExecutePlayerCommand(PlayerCommand.Right); // E
+			game.ExecutePlayerCommand(PlayerCommand.Right); // S
+			game.ExecutePlayerCommand(PlayerCommand.Move); // would put the player at -1, should stay at 0
+			Assert.AreEqual(0, game.Player.x, "Unexpected X axis movement");
+			Assert.AreEqual(0, game.Player.y, "Unexpected Y axis movement");
+		}
+
+		[Test()]
+		public void TestDoesntMovePastWestBoardEdge()
+		{
+			var game = new Game();
+			game.ExecutePlayerCommand(PlayerCommand.Left);
+			game.ExecutePlayerCommand(PlayerCommand.Move); // would put the player at -1, should stay at 0
+			Assert.AreEqual(0, game.Player.x, "Unexpected X axis movement");
+			Assert.AreEqual(0, game.Player.y, "Unexpected Y axis movement");
 		}
 
 		/// <summary>
