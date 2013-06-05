@@ -25,5 +25,15 @@ namespace amazinggame
 		/// A move command will cause the player to move in the direction
 		/// indicated here.
 		public Direction Facing { get; internal set; }
+
+		public void TurnLeft ()
+		{
+			throw new NotImplementedException ();
+		}
+
+		public void TurnRight ()
+		{
+			throw new NotImplementedException ();
+		}
 	}
 }

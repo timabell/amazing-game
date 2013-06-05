@@ -43,7 +43,13 @@ namespace amazinggame
 			{
 				case PlayerCommand.Move:
 					MovePlayer();
-					return;
+					break;
+				case PlayerCommand.Left:
+					Player.TurnLeft();
+					break;
+				case PlayerCommand.Right:
+					Player.TurnRight();
+					break;
 				default: // here be dragons
 					// Where did that come from? Bad programmer, you didn't finish your refactoring, as a prize you get this exception:
 					throw new NotSupportedException(
