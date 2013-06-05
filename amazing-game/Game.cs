@@ -119,26 +119,30 @@ namespace amazinggame
 				4| X X X X X |
 				3| X X X X X |
 				2| X X X X X |
-				1| X X X X X |
+				1| @ X X X X |
 				 ------------
 				   0 1 2 3 4
 			 **/
 			sb.AppendLine();
 			// top border
 			sb.Append(' ');
-			sb.Append('-', MaxX * 2 + 4); // double spacing, plus 2 side borders
+			sb.Append('-', MaxX * 2 + 5); // double spacing, plus 2 side borders
 			sb.AppendLine();
-			for (int y = MaxY; y > 0; y--) {
+			for (int y = MaxY; y >= 0; y--) {
 				sb.Append(y);
 				sb.Append("|");
 				for (int x = 0; x <= MaxX; x++) {
-					sb.Append(" X");
+					if (x == Player.x && y == Player.y) {
+						sb.Append(" @");
+					} else {
+						sb.Append(" X");
+					}
 				}
 				sb.AppendLine(" |");
 			}
 			// bottom border
 			sb.Append(' ');
-			sb.Append('-', MaxX * 2 + 4); // double spacing, plus 2 char side border
+			sb.Append('-', MaxX * 2 + 5); // double spacing, plus 2 char side border
 			sb.AppendLine();
 			sb.Append("  ");
 			for (int x = 0; x <= MaxX; x++) {
