@@ -36,8 +36,8 @@ namespace amazinggametests
 			// check first move puts player in position 0,1 (because facing North)
 			var game = new Game();
 			game.ExecutePlayerCommand(PlayerCommand.Move);
-			Assert.AreEqual(0, game.Player.x);
-			Assert.AreEqual(1, game.Player.y);
+			Assert.AreEqual(0, game.Player.x, "Unexpected X axis movement");
+			Assert.AreEqual(1, game.Player.y, "Player failed to move one position to the North");
 		}
 	}
 }
