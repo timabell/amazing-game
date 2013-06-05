@@ -27,7 +27,10 @@ namespace amazinggame
 		/// indicated here.
 		public Direction Facing { get; internal set; }
 
-		public void TurnLeft ()
+		/// <summary>
+		/// Allows the game to turn the player left, not for public consumption
+		/// </summary>
+		internal void TurnLeft ()
 		{
 			// We could do clever stuff here by converting to int,
 			// using increment (++), and mod (%) to get the code simple,
@@ -54,7 +57,10 @@ namespace amazinggame
 			}
 		}
 
-		public void TurnRight ()
+		/// <summary>
+		/// Allows the game to turn the player right, not for public consumption
+		/// </summary>
+		internal void TurnRight ()
 		{
 			switch (Facing)
 			{
