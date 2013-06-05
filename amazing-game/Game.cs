@@ -36,5 +36,10 @@ namespace amazinggame
 			// due to use of magic)
 			Player.Facing = Direction.North;
 		}
+
+		public void ExecutePlayerCommand(PlayerCommand command)
+		{
+			throw new NotImplementedException("hold your horses!");
+		}
 	}
 }
