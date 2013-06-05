@@ -83,13 +83,13 @@ namespace amazinggame
 					}
 					break;
 				case Direction.East: // TODO: limit checks on east/south/west & matching tests
-					Player.y++;
+					Player.x++;
 					break;
 				case Direction.South:
-					Player.y++;
+					Player.y--;
 					break;
 				case Direction.West:
-					Player.y++;
+					Player.x--;
 					break;
 				default:
 					// Throw invalid operation to reflect broken internal state.
