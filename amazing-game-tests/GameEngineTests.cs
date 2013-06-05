@@ -14,6 +14,13 @@ namespace amazinggametests
 			Assert.AreEqual(0, game.Player.x);
 			Assert.AreEqual(0, game.Player.y);
 		}
+
+		[Test()]
+		public void IntialState_PlayerFacingNorth()
+		{
+			var game = new Game();
+			Assert.AreEqual(Direction.North, game.Player.Facing);
+		}
 	}
 }
 
