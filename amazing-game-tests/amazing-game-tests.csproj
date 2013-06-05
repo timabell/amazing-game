@@ -40,9 +40,13 @@
       <Private>False</Private>
       <Package>nunit</Package>
     </Reference>
+    <Reference Include="nunit.framework">
+      <Package>mono-nunit</Package>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="GameEngineTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
