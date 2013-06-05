@@ -113,6 +113,30 @@ namespace amazinggametests
 			Assert.AreEqual(2, game.Player.y, "Pattern 1 - player failed to end at y=2");
 			Assert.AreEqual(Direction.North, game.Player.Facing, "Pattern 1 - player isn't facing the right way");
 		}
+
+		/// <summary>
+		/// Tests pattern3 end game.
+		/// Moves: MMMMM
+		/// End: 0, 4 N
+		/// </summary>
+		[Test()]
+		public void TestPattern3_EndGame()
+		{
+			// initialise
+			var game = new Game();
+
+			// act
+			game.ExecutePlayerCommand(PlayerCommand.Move);  // 0,1 N
+			game.ExecutePlayerCommand(PlayerCommand.Move);  // 0,2 N
+			game.ExecutePlayerCommand(PlayerCommand.Move);  // 0,3 N
+			game.ExecutePlayerCommand(PlayerCommand.Move);  // 0,4 N
+			game.ExecutePlayerCommand(PlayerCommand.Move);  // 0,4 N - edge of board
+
+			// assert
+			Assert.AreEqual(0, game.Player.x, "Pattern 1 - player failed to end at x=2");
+			Assert.AreEqual(4, game.Player.y, "Pattern 1 - player failed to end at y=2");
+			Assert.AreEqual(Direction.North, game.Player.Facing, "Pattern 1 - player isn't facing the right way");
+		}
 	}
 }
 
