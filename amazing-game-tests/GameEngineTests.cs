@@ -59,7 +59,7 @@ namespace amazinggametests
 				game.ExecutePlayerCommand(PlayerCommand.Move);
 			}
 			Assert.AreEqual(0, game.Player.x, "Unexpected X axis movement");
-			Assert.AreEqual(4, game.Player.y, "Player failed to move to North edge of the board");
+			Assert.AreEqual(4, game.Player.y, "Player didn't stop at the North edge of the board");
 		}
 
 		/// <summary>
