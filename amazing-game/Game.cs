@@ -59,9 +59,11 @@ namespace amazinggame
 			switch (Player.Facing)
 			{
 				case Direction.North:
-					Player.y++;
+					if (Player.y < MaxY) { // no effect if already at edge (that's what the spec asks for)
+						Player.y++;
+					}
 					break;
-				case Direction.East:
+				case Direction.East: // TODO: limit checks on east/south/west & matching tests
 					Player.y++;
 					break;
 				case Direction.South:
