@@ -18,5 +18,12 @@ namespace amazinggame
 		/// </summary>
 		/// 0 is bottom space on the board
 		public int y { get; set; }
+
+		/// <summary>
+		/// Which way the player is currently moving on the board.
+		/// </summary>
+		/// A move command will cause the player to move in the direction
+		/// indicated here.
+		public Direction Facing { get; private set; }
 	}
 }
