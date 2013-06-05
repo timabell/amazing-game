@@ -20,10 +20,24 @@ namespace amazinggame
 				Console.Out.WriteLine(game);
 				Console.Out.WriteLine();
 
+				// Output player info as per spec
+				Console.Out.WriteLine(string.Format("Your player: {0} {1} {2}",
+				                 game.Player.x, game.Player.y,
+				                 game.Player.Facing.ToString().Substring(0,1))); // grab first char of enum
+				Console.Out.WriteLine();
+
 				// wait for user command
 				Console.Out.Write("Enter command: ");
 				Console.Out.Write(history);
 				var key = Console.ReadKey();
+
+				// don't store or process enter key, messes up layout.
+				if (key.Key == ConsoleKey.Enter)
+				{
+					continue;
+				}
+
+				// convert to char to use as a command, and add to history for screen refresh
 				command = key.KeyChar;
 				history.Append(command);
 
