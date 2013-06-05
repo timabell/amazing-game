@@ -11,10 +11,23 @@ namespace amazinggame
 	/// </summary>
 	public class Game
 	{
+		private const int BOARD_SIZE = 4;
+
 		public Player Player { get; private set; }
 
+		// TODO: investigate use of a point class instead of separate ints.
+		public int MaxX { get; private set; }
+		public int MaxY { get; private set; }
+
+		/// <summary>
+		/// Initializes a new instance of the <see cref="amazinggame.Game"/> class.
+		/// Sets up the board and Player ready for play to begin. Have fun!!
+		/// </summary>
 		public Game()
 		{
+			MaxX = BOARD_SIZE;
+			MaxY = BOARD_SIZE;
+
 			Player = new Player();
 
 			// Start the player facing North:
