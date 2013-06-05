@@ -28,12 +28,53 @@ namespace amazinggame
 
 		public void TurnLeft ()
 		{
-			throw new NotImplementedException ();
+			// We could do clever stuff here by converting to int,
+			// using increment (++), and mod (%) to get the code simple,
+			// but that would be harder for a human to follow, so we shalln't.
+			switch (Facing)
+			{
+				// anti-clockwise, in order:
+				case Direction.North:
+					Facing = Direction.West;
+					break;
+				case Direction.West:
+					Facing = Direction.South;
+					break;
+				case Direction.South:
+					Facing = Direction.East;
+					break;
+				case Direction.East:
+					Facing = Direction.North;
+					break;
+				default:
+					// Throw invalid operation to reflect broken internal state.
+					throw new InvalidOperationException(
+						String.Format("Unexpected enum value encountered for Player.Facing: {0}", Facing));
+			}
 		}
 
 		public void TurnRight ()
 		{
-			throw new NotImplementedException ();
+			switch (Facing)
+			{
+				// clockwise, in order:
+				case Direction.North:
+					Facing = Direction.East;
+					break;
+				case Direction.East:
+					Facing = Direction.South;
+					break;
+				case Direction.South:
+					Facing = Direction.West;
+					break;
+				case Direction.West:
+					Facing = Direction.North;
+					break;
+				default:
+					// Throw invalid operation to reflect broken internal state.
+					throw new InvalidOperationException(
+						String.Format("Unexpected enum value encountered for Player.Facing: {0}", Facing));
+			}
 		}
 	}
 }
