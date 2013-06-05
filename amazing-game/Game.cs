@@ -133,7 +133,26 @@ namespace amazinggame
 				sb.Append("|");
 				for (int x = 0; x <= MaxX; x++) {
 					if (x == Player.x && y == Player.y) {
-						sb.Append(" @");
+						switch (Player.Facing)
+						{
+							// clockwise, in order:
+							case Direction.North:
+								sb.Append(" ^");
+								break;
+							case Direction.East:
+								sb.Append(" >");
+								break;
+							case Direction.South:
+								sb.Append(" v");
+								break;
+							case Direction.West:
+								sb.Append(" <");
+								break;
+							default:
+								// Throw invalid operation to reflect broken internal state.
+								throw new InvalidOperationException(
+									String.Format("Unexpected enum value encountered for Player.Facing: {0}", Player.Facing));
+						}
 					} else {
 						sb.Append(" X");
 					}
