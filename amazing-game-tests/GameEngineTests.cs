@@ -61,6 +61,32 @@ namespace amazinggametests
 			Assert.AreEqual(0, game.Player.x, "Unexpected X axis movement");
 			Assert.AreEqual(4, game.Player.y, "Player failed to move to North edge of the board");
 		}
+
+		/// <summary>
+		/// Tests pattern1 end game.
+		/// Moves: MRMLMRM
+		/// End: 2, 2 E
+		/// </summary>
+		[Test()]
+		public void TestPattern1_EndGame()
+		{
+			// initialise
+			var game = new Game();
+
+			// act
+			game.ExecutePlayerCommand(PlayerCommand.Move);  // 0,1 N
+			game.ExecutePlayerCommand(PlayerCommand.Right); // 0,1 E
+			game.ExecutePlayerCommand(PlayerCommand.Move);  // 1,1 E
+			game.ExecutePlayerCommand(PlayerCommand.Left);  // 1,1 N
+			game.ExecutePlayerCommand(PlayerCommand.Move);  // 1,2 N
+			game.ExecutePlayerCommand(PlayerCommand.Right); // 1,2 E
+			game.ExecutePlayerCommand(PlayerCommand.Move);  // 2,2 E
+
+			// assert
+			Assert.AreEqual(2, game.Player.x, "Pattern 1 - player failed to end at x=2");
+			Assert.AreEqual(2, game.Player.y, "Pattern 1 - player failed to end at y=2");
+			Assert.AreEqual(Direction.East, game.Player.Facing, "Pattern 1 - player isn't facing the right way");
+		}
 	}
 }
 
