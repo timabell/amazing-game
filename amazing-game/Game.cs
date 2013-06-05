@@ -10,7 +10,7 @@ using System.Text;
 //  player can be told to turn left or right and will update its state.
 //  This probably needs a bit more thought as it smells a bit funny.
 //  Hopefully the correct approach will become clear as requirements are
-//  added; and the unit tests will keep us safe from [most]
+//  added; and the unit tests will keep us safe from [most] mistakes.
 
 namespace amazinggame
 {
