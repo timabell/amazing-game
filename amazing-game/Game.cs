@@ -11,7 +11,7 @@ namespace amazinggame
 	/// </summary>
 	public class Game
 	{
-		private const int BOARD_SIZE = 4;
+		private const int BOARD_SIZE = 5;
 
 		public Player Player { get; private set; }
 
@@ -25,8 +25,8 @@ namespace amazinggame
 		/// </summary>
 		public Game()
 		{
-			MaxX = BOARD_SIZE;
-			MaxY = BOARD_SIZE;
+			MaxX = BOARD_SIZE - 1; // offset for zero-based index vs. one-based size information
+			MaxY = BOARD_SIZE - 1;
 
 			Player = new Player();
 
