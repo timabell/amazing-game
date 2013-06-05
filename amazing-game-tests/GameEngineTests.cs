@@ -26,8 +26,8 @@ namespace amazinggametests
 		public void IntialState_BoardSize()
 		{
 			var game = new Game();
-			Assert.AreEqual(4, game.MaxX);
-			Assert.AreEqual(4, game.MaxY);
+			Assert.AreEqual(4, game.MaxX, "incorrect board size on X-axis");
+			Assert.AreEqual(4, game.MaxY, "incorrect board size on Y-axis");
 		}
 	}
 }
