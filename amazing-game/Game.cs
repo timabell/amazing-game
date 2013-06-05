@@ -11,6 +11,11 @@ namespace amazinggame
 	/// </summary>
 	public class Game
 	{
-		public Player Player { get; set; }
+		public Player Player { get; private set; }
+
+		public Game()
+		{
+			Player = new Player();
+		}
 	}
 }
