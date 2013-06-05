@@ -3,12 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "amazing-game", "amazing-game.csproj", "{F484E1D5-4696-409A-BF6F-D0E93682A44F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "amazing-game-tests", "..\amazing-game-tests\amazing-game-tests.csproj", "{9E0A918C-4F8D-4024-8CC1-067ECC895DA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
+		Default|Any CPU = Default|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E0A918C-4F8D-4024-8CC1-067ECC895DA4}.Debug|x86.ActiveCfg = Debug|x86
+		{9E0A918C-4F8D-4024-8CC1-067ECC895DA4}.Debug|x86.Build.0 = Debug|x86
+		{9E0A918C-4F8D-4024-8CC1-067ECC895DA4}.Default|Any CPU.ActiveCfg = Debug|x86
+		{9E0A918C-4F8D-4024-8CC1-067ECC895DA4}.Default|Any CPU.Build.0 = Debug|x86
+		{9E0A918C-4F8D-4024-8CC1-067ECC895DA4}.Release|x86.ActiveCfg = Release|x86
+		{9E0A918C-4F8D-4024-8CC1-067ECC895DA4}.Release|x86.Build.0 = Release|x86
 		{F484E1D5-4696-409A-BF6F-D0E93682A44F}.Debug|x86.ActiveCfg = Debug|x86
 		{F484E1D5-4696-409A-BF6F-D0E93682A44F}.Debug|x86.Build.0 = Debug|x86
 		{F484E1D5-4696-409A-BF6F-D0E93682A44F}.Release|x86.ActiveCfg = Release|x86
