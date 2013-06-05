@@ -2,6 +2,14 @@ using System;
 // TODO: move this to its own class library to enable re-use.
 //  - I'd probably add a User Story reference to this TODO for a real project
 
+// TODO: There's a dilemma here as to whether the game or the player
+//  should control the movement of a player. Currently the game controls
+//  the moves as this requires knowledge of the edge of the board, but the
+//  player can be told to turn left or right and will update its state.
+//  This probably needs a bit more thought as it smells a bit funny.
+//  Hopefully the correct approach will become clear as requirements are
+//  added; and the unit tests will keep us safe from [most]
+
 namespace amazinggame
 {
 	/// <summary>
@@ -9,6 +17,11 @@ namespace amazinggame
 	/// encapsulating all the rules of play
 	/// and the interactions the player can use.
 	/// </summary>
+	/// The player object keeps the state information for the player
+	/// as this is a separate concern to the engine of the game.
+	/// The game engine (this class) 'instructs' the player to update its
+	/// state, and the player performs the change and can report its new
+	/// location and orientation.
 	public class Game
 	{
 		private const int BOARD_SIZE = 5;

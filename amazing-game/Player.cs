@@ -3,7 +3,8 @@ using System;
 namespace amazinggame
 {
 	/// <summary>
-	/// Represents the player on the game board
+	/// Represents the player on the game board.
+	/// Stores location, and direction the player is facing in.
 	/// </summary>
 	public class Player
 	{
