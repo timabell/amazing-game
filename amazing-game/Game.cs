@@ -1,4 +1,6 @@
 using System;
+// TODO: move this to its own class library to enable re-use.
+//  - I'd probably add a User Story reference to this TODO for a real project
 
 namespace amazinggame
 {
