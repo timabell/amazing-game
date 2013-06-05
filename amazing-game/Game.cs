@@ -31,6 +31,7 @@ namespace amazinggame
 		public Player Player { get; private set; }
 
 		// TODO: investigate use of a point class instead of separate ints.
+		//   there's one in System.Windows.Point which might be the right one.
 		public int MaxX { get; private set; }
 		public int MaxY { get; private set; }
 
