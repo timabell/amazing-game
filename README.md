@@ -17,7 +17,7 @@ Dev Environment
 About
 -----
 
-Some might say, this is a bit like [Logo](https://en.wikipedia.org/wiki/Logo_(programming_language)) with its turtle but I say it's muuuuuuch better :-D
+Some might say, this is a bit like <a href="https://en.wikipedia.org/wiki/Logo_(programming_language)">Logo</a> with its turtle but I say it's muuuuuuch better :-D
 
 WishList
 --------
