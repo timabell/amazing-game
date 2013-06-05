@@ -51,7 +51,10 @@ namespace amazinggame
 			}
 		}
 
-		public void MovePlayer ()
+		/// <summary>
+		/// Moves the player one step in the direction they are facing.
+		/// </summary>
+		private void MovePlayer ()
 		{
 			switch (Player.Facing)
 			{
