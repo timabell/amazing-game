@@ -83,5 +83,10 @@ namespace amazinggame
 						String.Format("Unexpected enum value encountered for Player.Facing: {0}", Facing));
 			}
 		}
+
+		public override string ToString ()
+		{
+			return string.Format ("[Player: x={0}, y={1}, Facing={2}]", x, y, Facing);
+		}
 	}
 }

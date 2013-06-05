@@ -1,4 +1,6 @@
 using System;
+using System.Text;
+
 // TODO: move this to its own class library to enable re-use.
 //  - I'd probably add a User Story reference to this TODO for a real project
 
@@ -103,6 +105,48 @@ namespace amazinggame
 					throw new InvalidOperationException(
 						String.Format("Unexpected enum value encountered for Player.Facing: {0}", Player.Facing));
 			}
+		}
+
+		public override string ToString ()
+		{
+			var sb = new StringBuilder();
+			sb.AppendFormat("[Game: Player={0}, MaxX={1}, MaxY={2}]", Player, MaxX, MaxY);
+
+			// diy curses! TODO: find a better way of doing this
+
+			/* Output:
+				 ------------
+				4| X X X X X |
+				3| X X X X X |
+				2| X X X X X |
+				1| X X X X X |
+				 ------------
+				   0 1 2 3 4
+			 **/
+			sb.AppendLine();
+			// top border
+			sb.Append(' ');
+			sb.Append('-', MaxX * 2 + 4); // double spacing, plus 2 side borders
+			sb.AppendLine();
+			for (int y = MaxY; y > 0; y--) {
+				sb.Append(y);
+				sb.Append("|");
+				for (int x = 0; x <= MaxX; x++) {
+					sb.Append(" X");
+				}
+				sb.AppendLine(" |");
+			}
+			// bottom border
+			sb.Append(' ');
+			sb.Append('-', MaxX * 2 + 4); // double spacing, plus 2 char side border
+			sb.AppendLine();
+			sb.Append("  ");
+			for (int x = 0; x <= MaxX; x++) {
+				sb.Append(' ');
+				sb.Append(x);
+			}
+			sb.AppendLine();
+			return sb.ToString();
 		}
 	}
 }
