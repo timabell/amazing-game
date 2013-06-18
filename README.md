@@ -3,6 +3,8 @@ An exercise in C# TDD
 
 This project implements a little game as a console app.
 
+It has been created as an example of creating a simple C# app with TDD.
+
 Contact Tim Abell <tim@timwise.co.uk> to know more.
 
 Dev Environment
